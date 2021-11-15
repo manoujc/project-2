@@ -1,0 +1,40 @@
+---
+title: "Project 2"
+author: "Manou (CPSC 292-01)"
+date: "11/8/2021"
+output: html_document
+---
+
+```{r, include=TRUE}
+library(readxl)
+library(xlsx)
+library(ggplot2)
+library(gganimate)
+library(gifski)
+library(gapminder)
+```
+
+Visual 1 (conditional statement):
+```{r,include=TRUE}
+steak_risk_survey <- read_csv("steak-survey/steak-risk-survey.csv")
+View(steak_risk_survey)
+
+x <- na.omit(steak_risk_survey$`How do you like your steak prepared?`)
+y <- na.omit(steak_risk_survey$Age)
+fill <- steak_risk_survey$Gender
+
+```
+```{r,include=TRUE}
+if(steak_risk_survey$`Do you eat steak?` == "No") {
+  
+}
+```
+
+```{r, include=TRUE}
+steak <- ggplot(steak_risk_survey, aes(x,y)) +
+  geom_point()
+
+aniamte(steak)
+```
+
+I want to animate the choice of steak cooking between men and women from ages 18-60+. I want to do the conditionals that (a) if you don't eat steak, don't include on the graph, and (b) you are from the West Coast, the point will be outlined. The fill will be preparation preference, the x-axis is age, and I'm not sure if there has to be something on the y axis.
