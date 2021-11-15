@@ -1,0 +1,42 @@
+---
+title: "The Ultimate Halloween Candy Power Ranking Visual (Draft)"
+author: "Manou (CPSC 292-01)"
+date: "10/19/2021"
+output: html_document
+---
+
+```{r, include=TRUE}
+library(readxl)
+library(xlsx)
+```
+
+Viz 1
+
+```{r, include=TRUE}
+plot(candy_data$sugarpercent~candy_data$winpercent,
+     data = candy_data,
+     xlab = "Win Percent",
+     ylab = "Sugar Percent",
+     main = "Halloween Candy Popurlarity Compared to the Average Sugar Percent",
+     type = "p",
+     col = "slategray4",
+     pch = 20)
+```
+
+Viz 2
+
+```{r, include=TRUE}
+force(candy_data)
+plot(candy_data$winpercent~candy_data$sugarpercent,
+     data = candy_data,
+     xlab = "Sugar Percent",
+     ylab = "Win Percent",
+     main = "Halloween Candy Popurlarity Compared to the Sugar Percent",
+     type = "p",
+     col = "violetred",
+     pch = 18)
+```
+Sources:
+https://www.data-to-viz.com/graph/circularbarplot.html
+
+
